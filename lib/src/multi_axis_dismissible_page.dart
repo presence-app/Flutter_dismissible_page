@@ -1,5 +1,6 @@
 part of 'dismissible_page.dart';
 
+
 @visibleForTesting
 class MultiAxisDismissiblePage extends StatefulWidget {
   const MultiAxisDismissiblePage({
@@ -57,8 +58,12 @@ class MultiAxisDismissiblePage extends StatefulWidget {
       _MultiAxisDismissiblePageState();
 }
 
+mixin _Drag implements Drag {
+
+}
+
 class _MultiAxisDismissiblePageState extends State<MultiAxisDismissiblePage>
-    with Drag, SingleTickerProviderStateMixin, _DismissiblePageMixin {
+    with _Drag, SingleTickerProviderStateMixin, _DismissiblePageMixin {
   late final GestureRecognizer _recognizer;
   late final ValueNotifier<DismissiblePageDragUpdateDetails> _dragNotifier;
   Offset _startOffset = Offset.zero;
